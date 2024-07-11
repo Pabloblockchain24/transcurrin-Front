@@ -1,0 +1,266 @@
+.headerNavIntranet{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3%;
+}
+
+.nav-Intranet{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgb(253, 177, 0);
+    position: absolute;
+    z-index: 9999;
+}
+
+.nav-list-Intranet{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: rgb(253, 177, 0);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    
+}
+
+
+.buttonAbrir{
+    padding: 2%;
+}
+
+/*ESTOS SON LOS EQUIVALENTES A "nav-list li a"*/
+.itemlistNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: medium;
+    border-right: 1px solid rgb(216, 216, 216);
+    width: 100%;
+    gap: 3%;
+}
+
+.liNavList{
+    width: 100%;
+}
+.liNavList:hover{
+    background-color: rgb(255, 201, 54);
+}
+
+.navbarIntranetCustom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    margin-left: 10%;
+}
+
+.abrirMenu {
+    display: none;
+    background-color: rgb(253, 177, 0);
+    width: 100%;
+}
+
+.customButtonNavbarIntranet{
+    margin-top: 2.5%;
+    margin-bottom: 2.5% ;
+    margin-left: 5%;
+}
+
+
+.cerrarMenu{
+    display: none;
+    font-size: 2rem;
+    background-color: transparent;
+    margin-block: 8%;
+    color: black;
+}
+
+
+.buttonLogout{
+    display: none;
+    font-size: small;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15%;
+    background-color: rgb(223, 223, 223);
+    padding: 0.5rem;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.buttonLogout:hover{
+    background-color:  rgb(156, 156, 156);
+
+}
+
+@media screen and (max-width: 1400px) {
+    .itemlistNav{
+        font-size: small;
+        font-weight: 600;
+    }
+
+    .headerNavIntranet{
+        margin-bottom: 5%;
+    }
+    
+}
+
+@media screen and (max-width: 920px) {
+
+    .headerNavIntranet{
+        margin-bottom: 6%;
+    }
+    .abrirMenu,.cerrarMenu,.buttonLogout {
+        display: block;
+    }
+    .nav-Intranet{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 40%;
+        top: 0;
+        left: 0;
+        padding: 1rem;
+        bottom: 0;
+        box-shadow: 0px 0px 0px 100vmax rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+
+    }
+    .nav-Intranet.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-list-Intranet{
+        flex-direction: column;
+        align-items: start;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        justify-content: start;
+    }
+    .itemlistNav{
+        border: 0;
+        padding: 1rem;
+        gap: 1.5rem;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .liNavList{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-Intranet{
+        padding-block: 10% ;
+    }
+    .nav-list-Intranet{
+        margin-top: 10%;
+    }
+    .itemlistNav{
+        font-size: x-small;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+        margin-block: 7%;
+    }
+    .nav-item-icon{
+        font-size: medium;
+    }
+}
+
+/*     
+    .navbarIntranetCustom {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        z-index: 1000;
+        gap: 2rem;
+        background-color: rgb(46, 46, 46);
+        padding: 3rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.4);
+        margin-left: 0%;
+        width: 50%;
+      }
+
+    .navbarIntranetCustom.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+
+
+    .nav-list-Intranet{
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        gap: 0.5rem;
+        font-size: large;
+    }
+
+    .menuMobile{
+        display: block;
+        border: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 5%;
+        color: black;
+      } */
+/* }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-item-Intranet{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+
+    border-right: 1px solid rgb(218, 218, 218);
+    padding: 0.5%;
+    font-weight: bold;
+    width: 20%;
+}
+
+.nav-item-icon{
+margin-right: 5%;
+}
+
+.nav-item-Intranet:hover{
+    background-color: rgb(241, 214, 164);
+} */

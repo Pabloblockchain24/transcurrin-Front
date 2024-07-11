@@ -1,0 +1,28 @@
+.customTable{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-top: 2%;
+}
+
+.customVacio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 10%;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+.tableCellColumn{
+        padding: 10px !important;
+}
+
+@media screen and (max-width: 1400px) {
+    .customTable{
+        width: 95%;
+    }
+
+}
