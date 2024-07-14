@@ -1,0 +1,75 @@
+.slick-prev:before{
+    color: white; 
+    font-size: 20px; 
+}
+
+.slick-next:before {
+  color: white;
+  font-size: 20px;
+}
+
+.slick-prev {
+  left: 50px;
+  display: block !important;
+  position: absolute;
+    z-index:25000
+}
+.slick-next {
+  right: 50px; 
+}
+
+.HomeContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sectionContainer{
+    padding-inline: 8rem;
+}
+
+.sectionTitle{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sectionsArticles{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.MapCustom{
+    width: 100%;
+    margin-block: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+    .sectionContainer{
+        padding-inline: 6rem;
+    }
+    .sectionsArticles{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    .sectionTitle{
+        font-size: x-large;
+        padding-block: 1rem;
+        text-align: center;        
+    }
+    .MapCustom{
+        margin-block: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sectionContainer{
+        padding-inline: 2rem;
+    }
+    .sectionTitle{
+        font-size: large;
+    }
+}

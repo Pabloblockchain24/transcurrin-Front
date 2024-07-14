@@ -1,10 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+
+/* Import pages */
+import Home from "./pages/Home/Home";
+
+
+
 import EmailRequestReset from "./pages/EmailRequestReset/EmailRequestReset";
 
 import LoginPage from "./pages/LoginPage/LoginPage"
 import ServiceFormPage from "./pages/ServiceFormPage";
-import HomePage from "./pages/HomePage/HomePage";
 import ProtectedRoute from "./ProtectedRoute"
 import { IntranetProvider } from "./context/IntranetContext";
 import Navbar from "./components/Navbar/Navbar";
@@ -36,7 +41,7 @@ function App() {
           <Navbar/>
           <hr />
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/categoria/SERVICIOS" element={<Servicios />} />
             <Route path="/categoria/NOSOTROS" element={<Nosotros />} />

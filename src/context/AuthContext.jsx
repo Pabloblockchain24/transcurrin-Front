@@ -23,7 +23,6 @@ export const AuthProvider = ({ children }) => {
 
     const sendMail = async(data) => {
         try {
-            console.log("estoy en el authcontext/sendMail")
             console.log(data)
             const res = await sendMailRequest(data)
             console.log(res)
@@ -58,6 +57,7 @@ export const AuthProvider = ({ children }) => {
 
     const signin = async (user) => {
         try {
+            console.log(user)
             const res = await loginRequest(user)
             setIsAuthenticated(true)
             setUser(res.data)
