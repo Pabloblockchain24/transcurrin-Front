@@ -1,0 +1,70 @@
+@import url('../../assets/colors/variables.css');
+
+.nosotrosArticle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-card);
+}
+
+.nosotrosItem{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.nosotrosItemTitle{
+    font-size: large;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nosotrosItemParagraph{
+    font-size: medium;
+    text-align: justify;
+    padding-inline: 8rem ;
+}
+
+.nosotrosItemImg{ 
+    width: 20rem;
+    box-shadow: 5px 5px 5px var(--primary);
+}
+
+@media screen and (max-width: 1400px) {
+    .nosotrosItemParagraph{
+        padding-inline: 4rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nosotrosItem{
+        gap: 1rem;
+    }
+    .nosotrosItemTitle{
+        font-size: medium;
+    }
+    .nosotrosItemParagraph{
+        font-size: small;
+        padding-inline: 2rem ;
+    }
+
+}
+@media screen and (max-width: 992px) {
+    .nosotrosArticle{
+        flex-direction: column;
+        gap: 3rem;
+        padding-block: 2rem;
+    }
+    .nosotrosItemTitle{
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 600px) {   
+    .nosotrosItemImg{
+        width: 15rem;
+    }
+    .nosotrosItemParagraph{
+        padding-inline: 1rem;
+    }
+}

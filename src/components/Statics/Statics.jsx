@@ -1,8 +1,7 @@
+/*import components*/
 import StaticItem from "../StaticsItem/StaticsItem";
 
-
 function Statics() {
-
     return (
         <>
             <section className='sectionContainer'>

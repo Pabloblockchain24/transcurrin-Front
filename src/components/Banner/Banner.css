@@ -1,19 +1,21 @@
+@import url('../../assets/colors/variables.css');
+
 .slick-prev:before{
-    color: white; 
-    font-size: 20px; 
+    color: var(--primary);
+    font-size: 1rem; 
 }
 
 .slick-next:before {
-  color: white;
-  font-size: 20px;
+  color: var(--primary);
+  font-size: 1rem; 
 }
 
 .slick-prev {
-  left: 50px;
+  left: 1rem;
   display: block !important;
   position: absolute;
     z-index:25000
 }
 .slick-next {
-  right: 50px; 
+  right: 1rem; 
 }

@@ -1,3 +1,5 @@
+@import url('../../assets/colors/variables.css');
+
 .counterContainer {
     display: flex;
     flex-direction: column;
@@ -10,7 +12,7 @@
 .CounterItem {
     font-size: 4rem;
     font-weight: bolder;
-    color: rgb(253, 177, 0);
+    color: var(--secondary);
 }
 
 .CounterTitle {
@@ -29,8 +31,6 @@
 @media screen and (max-width: 992px) {
     .CounterItem {
         font-size: 3rem;
-        font-weight: bolder;
-        color: rgb(253, 177, 0);
     }
 }
 

@@ -1,7 +1,9 @@
+
+
 .HomeContainer{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
 .sectionContainer{
@@ -11,7 +13,7 @@
 .sectionTitle{
     font-size: xx-large;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-primary)
 }
 
 .sectionsArticles{
@@ -21,9 +23,10 @@
     padding: 1rem;
 }
 
-
-
 @media screen and (max-width: 992px) {
+    .HomeContainer{
+        gap: 2.5rem;
+    }
     .sectionContainer{
         padding-inline: 6rem;
     }
@@ -41,10 +44,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    .HomeContainer{
+        gap: 1.5rem;
+    }
     .sectionContainer{
         padding-inline: 2rem;
-    }
-    .sectionTitle{
-        font-size: large;
     }
 }

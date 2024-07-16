@@ -1,6 +1,7 @@
 /*Import styles*/
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import "./Banner.css"
 
 /*Import dependencies*/
 import React from 'react';
@@ -25,9 +26,9 @@ function Banner() {
         <>
             <section >
                 <Slider {...settings}>
-                    <BannerItem title="SOLUCIONES LOGISTICAS A TU MEDIDA" subtitle="Nos adaptamos a tus necesidades" img="src/assets/banners/banner1.jpg" />
-                    <BannerItem title="EXPERIENCIA A TU SERVICIO" subtitle="35 años de operación nos respaldan" img="src/assets/banners/banner2.jpg" />
-                    <BannerItem title="CENTRATE EN TU NEGOCIO PRINCIPAL" subtitle="Despreocupate de la logistica de tu carga" img="src/assets/banners/banner3.jpg" />
+                    <BannerItem title="SOLUCIONES LOGISTICAS A TU MEDIDA" subtitle="Nos adaptamos a tus necesidades" img="src/assets/images/banners/banner1.jpg" />
+                    <BannerItem title="EXPERIENCIA A TU SERVICIO" subtitle="35 años de operación nos respaldan" img="src/assets/images/banners/banner2.jpg" />
+                    <BannerItem title="CENTRATE EN TU NEGOCIO PRINCIPAL" subtitle="Despreocupate de la logistica de tu carga" img="src/assets/images/banners/banner3.jpg" />
                 </Slider>
             </section>
             <hr />

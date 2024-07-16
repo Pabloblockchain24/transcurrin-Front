@@ -1,10 +1,10 @@
+@import url('../../assets/colors/variables.css');
+
 .BannerContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(100px);
+    background-color: var(--quaternary);
     background-blend-mode: multiply;
     background-size: cover;
     height: 70vh;
@@ -20,15 +20,15 @@
 .BannerTitle{
     font-size: xx-large;
     font-weight: bold;
-    color: white
+    color: var(--primary);
 }
 .BannerSubtitle{
     font-size: x-large;
-    color: white;
+    color: var(--primary);
 }
 
 .BannerButton{
-    background-color: rgb(253, 177, 0);
+    background-color: var(--secondary);
     font-size: large;
     font-weight: bold;
     padding: 0.75rem;
