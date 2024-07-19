@@ -1,0 +1,79 @@
+@import url('../../assets/colors/variables.css');
+
+.contactFormContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-inline: 5rem;
+    padding-block: 2rem;
+    gap: 1rem;
+}
+
+.contactFormItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contactFormTextArea{
+    display: flex;
+}
+
+.contactFormLabel{
+    font-size: medium;
+    font-weight: bold;
+    width: 40%;
+}
+
+.ContactFormInput {
+    width: 100%;
+    background-color: var(--background-card);
+    color: black;
+    padding:0.75rem;
+    margin-left: 0.5rem;
+}
+
+.ContactFormButton {
+    background-color: var(--quaternary) !important;
+    color: var(--primary);
+    font-weight: bold;
+    padding-inline: 3rem;
+    padding-block: 0.5rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.swal2-button {
+    background-color: #ff9800 !important; /* Cambia esto al tono de naranja que prefieras */
+    border-color: #ff9800 !important;
+  }
+
+@media screen and (max-width: 992px) {
+    .contactFormContainer{
+        padding-inline: 3rem;
+    }
+    .contactFormLabel{
+        font-size: small;
+    }
+    .ContactFormInput {
+        padding:0.5rem;
+    }
+    .ContactFormButton {
+        font-size: small;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contactFormContainer{
+        padding-inline: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contactFormContainer{
+        padding-inline: 1rem;
+    }
+}

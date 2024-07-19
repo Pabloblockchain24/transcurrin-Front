@@ -1,5 +1,5 @@
 /*Import componenets*/
-import CommitmentItem from "../CommitmentItem/CommitmentItem";
+import CommitmentItem from "../CommitmentsItem/CommitmentItem"
 
 function Commitments() {
     return (

@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { registerRequest, loginRequest, verifyTokenRequest, sendMailRequest, sendMailReset, verificarCorreo } from "../api/auth"
-
 import Cookies from "js-cookie"
 
 const AuthContext = createContext()
@@ -23,14 +22,12 @@ export const AuthProvider = ({ children }) => {
 
     const sendMail = async(data) => {
         try {
-            console.log(data)
             const res = await sendMailRequest(data)
-            console.log(res)
+            return res
         } catch (error) {
-            console.log(error)
+            throw new Error(error)
         }
     }
-
 
     const sendMailRes = async(data) => {
         try {
@@ -57,18 +54,13 @@ export const AuthProvider = ({ children }) => {
 
     const signin = async (user) => {
         try {
-            console.log(user)
             const res = await loginRequest(user)
-            setIsAuthenticated(true)
             setUser(res.data)
-            
+            setIsAuthenticated(true)
+            return res;
         } catch (error) {
-            if (Array.isArray(error.response.data)) {
-                return setErrors(error.response.data)
-            }
-
-            setErrors([error.response.data.message])
-        }
+           return error
+    }
     }
 
     const logout = async() =>{

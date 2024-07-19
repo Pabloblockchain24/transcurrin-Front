@@ -1,20 +1,59 @@
-.navbarMain {
+@import url('../../assets/colors/variables.css');
+
+.navbarContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1%;
+    padding-block: 2rem;
+    padding-inline: 5rem;
 }
 
 .navbarLogo{
-    width: 50%;
-    margin-right: 10%;
-    margin-left: 15%;
+  width: 15rem;
+}
+
+.navbarList{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbarListItem{
+  color: black;
+  font-size: large;
+  margin-inline: 1rem;
+  font-weight: 500;
+}
+
+.navbarListItem:hover{
+  color: var(--secondary);
+}
+
+.navbarListIntranet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5rem;
+  border-width: 3px;
+  border-color: var(--secondary);
+  margin-inline: 1rem;
+  padding: 0.6rem;
+}
+
+.navbarListIntranet:hover {
+  background-color: var(--secondary);
 }
 
 .menuMobile {
     display: none;
     margin-right: 5%;   
+}
+
+.cerrarMenuMobile {
+  display: none;
+  margin-bottom: 10%;
 }
 
 .buttonAbrir{
@@ -23,217 +62,140 @@
     border-radius: 0.375rem;
     padding: 1.5%;
 }
-
-.navbarList {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+ */
+.navbarUserAuthenticated {
+  font-weight: bold;
+  font-size: large;
 }
 
-.navbarCustom {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding: 1.5rem;
-    margin-left: 10%;
-}
-
-.navbarCustomOnIntranet {
+.navbarAuthenticated{
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   align-items: center;
-  width: 100%;
-  padding: 1.5rem;
-  margin-right: 10%;
+  gap: 2rem;
+}
+
+.navbarUserLogout{
+  display: block;
+  background-color: var(--secondary);
+  font-weight: bold;
+  padding: 0.75rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
   
-  .navbarLink {
-    color: black;
-    font-weight: bolder;
-    font-size: large;
+.navbarUserLogout:hover{
+  background-color:var(--primary)
+}
+
+@media screen and (max-width: 1450px) {
+  .navbarContainer{
+    padding-inline: 4rem;
+  }
+  .navbarListItem{
+    margin-inline: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbarContainer{
+    padding-inline: 3rem;
   }
 
-  .navbarLog {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    background-color: rgb(253, 177, 0);
-    padding: 1.5%;
-    font-weight: bold;
-    border-radius: 0.375rem;
-  }
-  
-  .navbarLogoLog {
-    width: 20px;
-  }
-  
-  .navbarLink:hover {
-    color: rgb(253, 177, 0);
-  }
-  
-  .navbarTitle {
-    font-weight: bold;
-    font-size: large;
+  .navbarLogo{
+    width: 12rem;
   }
 
-  .navAuthenticated{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  .navbarListItem{
+    font-size: small;
+    margin-inline: 0.75rem;
+    font-weight: 500;
   }
 
-  .buttonNavLogout{
+  .navbarListIntranet {
+    border-width: 2px;
+    font-size: small;
+  }
+}
+  
+@media screen and (max-width: 992px) {
+  .menuMobile{
     display: block;
-    background-color:rgb(253, 177, 0); ;
-    font-weight: bold;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  }
-  
-  .buttonNavLogout:hover{
-    background-color:rgb(255, 203, 83); ;
+    cursor: pointer;
   }
 
   .cerrarMenuMobile {
-    display: none;
-    margin-bottom: 10%;
-  }
-  
-  @media screen and (max-width: 1400px) {
-    .navbarLogo{
-        width: 40%;
-        margin-right: 0px;
-        margin-left: 15%;
-    }
-
-    .navbarCustom {
-        margin-left: 0%;
-    }
-    .navbarLink {
-      margin-inline: 1%;
-      font-size: medium;
-    }
+    display: block;
+    font-size: 2rem;
+    padding-inline: 1rem;
+    cursor: pointer;
+    color: var(--quaternary);
   }
 
-  @media screen and (max-width: 1150px) {
-    .navbarLink {
-      margin-inline: 1%;
-      font-size: medium;
-    }
-    .navbarLogo{
-        width: 70%;
-        margin-right: 0%;
-        margin-left: 15%;
-    }
-    .navbarList{
-        gap: 15px;
-    }
+  .navbarLinks {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1000;
+    background-color: var(--background-card);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.4);
+    width: 35%;
   }
 
-  @media screen and (max-width: 920px) {
-    .navbarLink {
-      margin-inline: 1%;
-      font-size: medium;
-    }
-    .navbarLogo{
-        width: 90%;
-        margin-right: 10%;
-        margin-left: 5%;
-    }
-    .navbarList{
-        gap: 10px;
-    }
-    .buttonNavLogout{
-      display: none;
-    }
+  .navbarLinks.visible {
+    opacity: 1;
+    visibility: visible;
   }
-  
-  @media screen and (max-width: 768px) {
-    .menuMobile{
-      display: block;
-      border: 0;
-      font-size: 2rem;
-      background-color: transparent;
-      cursor: pointer;
-      margin-right: 5%;
-      color: black;
-    }
-    .cerrarMenuMobile {
-      display: block;
-      border: 0;
-      font-size: 2rem;
-      background-color: transparent;
-      cursor: pointer;
-      margin-right: 5%;
-      color: white;
-    }
-    .navbarCustom {
-      opacity: 0;
-      visibility: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      position: fixed;
-      z-index: 1000;
-      gap: 2rem;
-      background-color: rgb(46, 46, 46);
-      padding: 3rem;
-      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.4);
-      margin-left: 0%;
-      width: 50%;
-    }
-  
-    .navbarCustom.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-  
-    .navbarList {
-      flex-direction: column;
-      justify-content: center;
-      align-items: end;
-      gap: 0.5rem;
-      font-size: large;
-    }
-  
-    .navbarLink {
-      color: white;
-      font-size: medium;
-    }
 
-    .navbarMain {
-        padding: 5%;
-    }
-
-    .navbarLogo{
-        width: 50%;
-        margin-left: 10%;
-    }
-
-    .navbarLog{
-      margin-top: 10%;
-      padding: 5%;
-    }
-
-    .navbarCustomOnIntranet {
-      padding: 1rem;
-      margin-right: 5%;
-    }
-
-    .navbarTitle{
-      font-size: small;
-      width: 100%;
-    }
+  .navbarList {
+    flex-direction: column;
+    align-items: end;
+    gap: 1.5rem;
   }
+  .navbarListItem{
+    font-size: medium;
+  }
+  .navbarListIntranet{
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbarContainer {
+    padding-inline: 1.5rem;
+  }
+
+  .navbarLinks {
+    width: 50%;
+  }
+  .navbarAuthenticated{
+    flex-direction: column;
+    align-items: center;
+    gap:0.5rem;
+  }
+  .navbarUserAuthenticated{
+    font-size: small;
+  }
+  .navbarUserLogout{
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbarLinks{
+    padding-inline: 1rem;
+  }
+  .navbarListItem, .navbarListIntranet{
+    font-size: small;
+  }
+  .navbarUserAuthenticated{
+    font-size: x-small;
+  }
+}

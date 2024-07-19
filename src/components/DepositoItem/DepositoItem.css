@@ -1,0 +1,54 @@
+@import url('../../assets/colors/variables.css');
+
+.depositoArticle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    background-color: var(--background-card);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.depositoImg{
+    width: 100%;   
+}
+
+.depositoArticle:hover{
+    transform: scale(1.01);
+    transition: 0.5s;
+    background-color: var(--primary);
+}
+
+.depositoArticleTitle{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.depositoArticleDescription{
+    font-size: medium;
+    text-align: justify;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .depositoArticle{
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .depositoArticle{
+        width: 20rem;
+    }
+    .depositoArticleTitle{
+        font-size: medium;
+        padding-top: 1rem;
+    }
+    .depositoArticleDescription{
+        font-size: small;
+        padding: 1.5rem;
+    }
+}

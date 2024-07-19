@@ -1,0 +1,45 @@
+@import url('../../assets/colors/variables.css');
+
+.clientesArticle{
+    background-color: var(--background-card);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 20rem;
+    padding-inline: 3rem;
+}
+
+.clientesArticleEmpresa{
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
+    padding-block: 3rem;
+}
+
+.clientesArticleDescription{
+    font-style: italic;
+    font-size: medium;
+    text-align: justify;
+    padding-bottom: 3rem;
+}
+
+.clientesArticleCargo{
+    padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+    .clientesArticleEmpresa{
+        font-size: large;
+        padding-block: 2rem;
+    }
+    .clientesArticleDescription{
+        font-size: small;
+        padding-bottom: 3rem;
+    }
+    .clientesArticleContacto{
+        font-size: small;
+    }
+    .clientesArticleCargo{
+        font-size: small;
+        padding-bottom: 1.5rem;
+    }
+
+}

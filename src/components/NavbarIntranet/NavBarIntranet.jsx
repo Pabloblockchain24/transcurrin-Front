@@ -47,9 +47,6 @@ function NavBarIntranet() {
           <li className='liNavList'> <NavLink to={"/intranet/vacios"} className="itemlistNav"> <GiReturnArrow className='nav-item-icon' />  DEV. VACIOS </NavLink> </li>
           <li className='liNavList'> <NavLink to={"/intranet/facturacion"} className="itemlistNav"> <GrCalculator className='nav-item-icon' />  FACTURACION </NavLink> </li>
         </ul>
-        <div>            
-          <Link className="buttonLogout" to="/" onClick={() => logout()}> CERRAR SESION </Link>
-        </div>
       </nav>
 
    

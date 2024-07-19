@@ -1,27 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 
-/* Import pages */
+/* Import home pages */
 import Home from "./pages/Home/Home";
+import Nosotros from "./pages/homePages/Nosotros/Nosotros"
+import Deposito from "./pages/homePages/Deposito/Deposito";
+import Servicios from "./pages/homePages/Servicios/Servicios"
+import Clientes from "./pages/homePages/Clientes/Clientes"
+import Contacto from "./pages/homePages/Contacto/Contacto"
+import Login from "./pages/homePages/Login/Login"
+import ResetPassword from "./pages/homePages/ResetPassword/ResetPassword";
 
+/* Import features */
+import ScrollToTop from './components/ScrollToTop';
 
-
-import EmailRequestReset from "./pages/EmailRequestReset/EmailRequestReset";
-
-import LoginPage from "./pages/LoginPage/LoginPage"
 import ServiceFormPage from "./pages/ServiceFormPage";
 import ProtectedRoute from "./ProtectedRoute"
 import { IntranetProvider } from "./context/IntranetContext";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
-import Servicios from "./pages/Servicios/Servicios"
-import Nosotros from "./pages/Nosotros/Nosotros"
-import Contacto from "./pages/Contacto/Contacto"
-import DepEqu from "./pages/DepEqu/DepEqu";
-import Clientes from "./pages/Clientes/Clientes"
 import Intranet from "./pages/Intranet/Intranet";
-import ScrollToTop from './components/ScrollToTop';
 
 import IntranetStock from "./pages/PagesIntranet/IntranetStock/IntranetStock";
 import IntranetProgramacion from "./pages/PagesIntranet/IntranetProgramacion/IntranetProgramacion";
@@ -42,13 +41,16 @@ function App() {
           <hr />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/categoria/SERVICIOS" element={<Servicios />} />
-            <Route path="/categoria/NOSOTROS" element={<Nosotros />} />
-            <Route path="/categoria/CONTACTO" element={<Contacto />} />
-            <Route path="/categoria/DEPOSITOEQUIPOS" element={<DepEqu />} />
-            <Route path="/categoria/CLIENTES" element={<Clientes />} />
-            <Route path="/emailRequestReset" element={<EmailRequestReset />} />
+            <Route path="/Nosotros" element={<Nosotros />} />
+            <Route path="/Deposito" element={<Deposito />} />
+            <Route path="/Servicios" element={<Servicios />} />
+            <Route path="/Clientes" element={<Clientes />} />
+            <Route path="/Contacto" element={<Contacto />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/ResetPassword" element={<ResetPassword />} />
+
+
+
 
 
 

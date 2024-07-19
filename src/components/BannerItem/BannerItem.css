@@ -28,11 +28,18 @@
 }
 
 .BannerButton{
-    background-color: var(--secondary);
+    border-width: 2px;
+    border-color: var(--secondary);
+    color: white;
     font-size: large;
     font-weight: bold;
     padding: 0.75rem;
     border-radius: 0.375rem;
+}
+
+.BannerButton:hover{
+    color: var(--primary);
+    background-color: var(--secondary);
 }
 
 /*Media queries*/

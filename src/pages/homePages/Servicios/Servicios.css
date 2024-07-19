@@ -1,0 +1,39 @@
+.serviciosContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3rem;
+    padding-inline: 5rem;
+    gap: 2rem;
+}
+
+.serviciosTitle{
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
+.serviciosSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem
+}
+
+@media screen and (max-width: 992px) {
+    .serviciosContainer{
+        padding-inline: 3rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .serviciosTitle{
+        font-size: x-large;
+    }
+    .serviciosSection{
+        padding-inline: 3rem;
+        gap: 1rem;
+    }
+}
+

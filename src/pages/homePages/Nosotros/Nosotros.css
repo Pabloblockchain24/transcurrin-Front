@@ -31,7 +31,7 @@
 
 @media screen and (max-width: 920px) {
     .nosotrosTitleSection{
-        font-size: large;
+        font-size: x-large;
     }
     .nosotrosSection{
         padding-inline: 3rem;
@@ -40,10 +40,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .nosotrosTitleSection{
-        font-size: medium;
-    }
     .nosotrosSection{
-        padding-inline: 1rem;
+        padding-inline: 2rem;
     }
 }

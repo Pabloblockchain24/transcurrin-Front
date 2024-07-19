@@ -4,7 +4,9 @@
   --tertiary : #379777;
   --quaternary: #45474B;
   --background-card: #E0E0E0;
-
+  --background-login: rgb(24 24 27);
+  --error: rgb(255, 0, 0);
+  --skyblue: rgb(73, 186, 252);
 
   --font-primary: 'Orbitron', sans-serif;
 

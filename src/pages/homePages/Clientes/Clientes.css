@@ -1,0 +1,44 @@
+.clientesContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 3rem;
+    padding-inline: 5rem;
+    gap: 2rem;
+}
+
+.clientesTitle{
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+}
+
+.clientesSubTitle{
+    font-size: large;
+    text-align: center;
+    padding-inline: 5rem;
+}
+
+.clientesSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-top:5rem;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .clientesSection{
+        margin-top:1rem;
+    }
+    .clientesTitle{
+        font-size: large;
+    }
+    .clientesSubTitle{
+        font-size: medium;
+        padding-inline: 1rem;
+    } 
+}

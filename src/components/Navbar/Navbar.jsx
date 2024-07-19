@@ -1,9 +1,16 @@
+/*import styles*/
+import "./Navbar.css"
+
+/*import dependencies */
 import React from 'react'
 import { useState, useEffect } from 'react'
-import "./Navbar.css"
 import { NavLink, Link, useLocation } from "react-router-dom"
+
+/*import context*/
 import { useAuth } from "../../context/AuthContext"
-import logoTrancurrin from "../../assets/logoSitio2.png"
+
+/*import icons and images*/
+import logoTrancurrin from "../../assets/logoTranscurrin.png"
 import { BsPersonGear } from "react-icons/bs";
 import { PiListFill } from "react-icons/pi";
 import { AiFillCloseSquare } from "react-icons/ai";
@@ -22,34 +29,40 @@ function Navbar() {
   }, [location.pathname]);
 
   return (
-    <header className="navbarMain">
+    <header className="navbarContainer">
       <NavLink to={isAuthenticated ? '/intranet' : '/'}> <img src={logoTrancurrin} alt="Logo" className="navbarLogo" /> </NavLink>
-      {isAuthenticated ? (
-        <nav className={menuOpen ? 'navbarCustom visible' : 'navbarCustomOnIntranet'}>
 
-          <ul className='navAuthenticated'>
-            <li> <div className="navbarTitle">BIENVENIDO {user.name}!</div> </li>
-            <li> <Link className="buttonNavLogout" to="/" onClick={() => logout()}> LOGOUT </Link> </li>
-          </ul>
-        </nav>
-      ) : (
-        <>
-          <button className="menuMobile" onClick={toggleMenu}> <PiListFill className='buttonAbrir' /> </button>
+      {/* If is not authenticated show first one navbar else show second one */}
+      {!isAuthenticated ?
+
+        /* this is the navbar when user is not authenticated */
+        (
+          <>
+            <button className="menuMobile" onClick={toggleMenu}> <PiListFill className='buttonAbrir' /> </button>
+            <nav className={menuOpen ? 'navbarLinks visible' : 'navbarLinks'}>
+              <ul className="navbarList">
+                <button className="cerrarMenuMobile" onClick={toggleMenu}><AiFillCloseSquare /></button>
+                <li><NavLink to="/Nosotros" className="navbarListItem"> NOSOTROS </NavLink> </li>
+                <li><NavLink to="/Deposito" className="navbarListItem"> EQUIPOS</NavLink></li>
+                <li><NavLink to="/Servicios" className="navbarListItem">SERVICIOS</NavLink></li>
+                <li><NavLink to="/Clientes" className="navbarListItem">CLIENTES</NavLink></li>
+                <li><NavLink to="/Contacto" className="navbarListItem">CONTACTO</NavLink></li>
+                <NavLink to="/Login" className="navbarListIntranet"><BsPersonGear /> INTRANET</NavLink>
+              </ul>
+            </nav>
+          </>
+        )
+        :
+        /* this is the navbar when user is authenticated */
+        (
           <nav className={menuOpen ? 'navbarCustom visible' : 'navbarCustom'}>
-            <ul className="navbarList">
-              <button className="cerrarMenuMobile" onClick={toggleMenu}><AiFillCloseSquare /></button>
-              <li><NavLink to="/categoria/NOSOTROS" className="navbarLink"> NOSOTROS </NavLink> </li>
-              <li><NavLink to="/categoria/DEPOSITOEQUIPOS" className="navbarLink"> EQUIPOS</NavLink></li>
-              <li><NavLink to="/categoria/SERVICIOS" className="navbarLink">SERVICIOS</NavLink></li>
-              <li><NavLink to="/categoria/CLIENTES" className="navbarLink">CLIENTES</NavLink></li>
-              <li><NavLink to="/categoria/CONTACTO" className="navbarLink">CONTACTO</NavLink></li>
-              <NavLink to="/login" className="navbarLog"><BsPersonGear className="navbarLogoLog" /> INTRANET</NavLink>
+            <ul className='navbarAuthenticated'>
+              <li> <div className="navbarUserAuthenticated">Bienvenido {user.name}</div> </li>
+              <li> <Link className="navbarUserLogout" to="/" onClick={() => logout()}> LOGOUT </Link> </li>
             </ul>
           </nav>
-        </>
-
-
-      )}
+        )
+      }
     </header>
   );
 }

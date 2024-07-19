@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import "./EmailRequestReset.css"
+import "./ResetPassword.css"
 import { useForm } from "react-hook-form"
-import { useAuth } from "../../context/AuthContext"
+import { useAuth } from "../../../context/AuthContext"
 import Swal from 'sweetalert2';
 import { useNavigate  } from 'react-router-dom';
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../../components/Loader/Loader';
 
-function EmailRequestReset() {
+function ResetPassword() {
     const { handleSubmit, register } = useForm()
     const { sendMailRes, verificarCorreoEnBD } = useAuth();
     const [loading, setLoading] = useState(false)
-
     const navigate = useNavigate();
-
 
     const onSubmit = handleSubmit(async(data) => {
         setLoading(true)
@@ -66,4 +64,4 @@ function EmailRequestReset() {
     )
 }
 
-export default EmailRequestReset
+export default ResetPassword

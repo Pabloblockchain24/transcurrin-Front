@@ -1,0 +1,90 @@
+.loginContainer{
+    background-image: url("../../../assets/images/backgrounds/login.jpg");
+    background-color: var(--quaternary);
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-block: 8rem ;
+}
+
+.loginCard{
+    background-color: var(--background-login);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 3rem;
+    padding-inline: 5rem;
+}
+
+.loginCardTitle{
+    font-size: x-large;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.loginFormInput{
+    background-color: var(--quaternary);
+    color:  var(--primary);
+    width: 20rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+}
+
+.loginFormError{
+    margin-top: 0.25rem;
+    color: var(--error);
+}
+.loginFormButton{
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    background-color: var(--background-card) !important;
+    font-weight: bold;
+}
+
+.loginResetPassword{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginResetPasswordText{
+    color: var(--primary);
+}
+.loginResetPasswordLink{
+    color: var(--skyblue);
+}
+@media screen and (max-width: 600px) {
+    .loginContainer{
+        padding-block: 4rem ;
+    
+    }
+    .loginCard{
+        padding-inline: 2rem;
+    }
+    .loginCardTitle{
+        font-size: large;
+    }
+
+    .loginFormInput{
+        width: 15rem;
+        padding-inline: 0.5rem;
+    }
+    .loginFormButton{
+        font-size:small ;
+    }
+    .loginResetPasswordText,.loginResetPasswordLink{
+        font-size:small ;
+    }
+}
