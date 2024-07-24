@@ -6,7 +6,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom'
 
 /*import images*/
-import logoFooter from "../../assets/logoFooter.png"
+import logoFooter from "../../assets/images/logos/logoFooter.png"
 
 function Footer() {
   return (

@@ -1,67 +1,94 @@
-import React, { useEffect, useState } from 'react'
+/*import styles*/
 import "./ResetPassword.css"
+
+/*import dependencies*/
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { useAuth } from "../../../context/AuthContext"
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useNavigate  } from 'react-router-dom';
+
+/*import context*/
+import { useAuth } from "../../../context/AuthContext"
+
+/*import components*/
 import Loader from '../../../components/Loader/Loader';
 
 function ResetPassword() {
     const { handleSubmit, register } = useForm()
-    const { sendMailRes, verificarCorreoEnBD } = useAuth();
+    const { user, sendMailResetPassword } = useAuth();
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate();
 
-    const onSubmit = handleSubmit(async(data) => {
+    const onSubmit = handleSubmit(async (data) => {
         setLoading(true)
         try {
-            const existe = await verificarCorreoEnBD(data)
-            if(existe){
-                await sendMailRes(data)
+            const res = await sendMailResetPassword(data)
+    
+            if (res.response && res.response.status === 400) {
+                Swal.fire({
+                    title: 'Error',
+                    text: res.response.data.message,
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        confirmButton: 'swal2-button',
+                    }
+                })
+            } else if (res.status === 200) {
                 Swal.fire({
                     title: '¡Correo enviado!',
                     text: 'Revisa el correo ingresado y sigue las instrucciones.',
                     icon: 'success',
                     confirmButtonText: 'OK',
-                }).then( () => {
-                    navigate('/')
+                }).then(() => {
+                    navigate('/intranet')
                 })
-            }else{
+            } else {
                 Swal.fire({
-                    title: '¡Error!',
-                    text: 'El correo ingresado no existe',
-                    icon: 'error',
+                    title: 'Error',
+                    text: 'Ha ocurrido un error inesperado.',
                     confirmButtonText: 'OK',
+                    customClass: {
+                        confirmButton: 'swal2-button',
+                    }
                 })
             }
         } catch (error) {
-            console.log(error)
-        } finally{
+            Swal.fire({
+                title: 'Error',
+                text: 'No se pudo enviar el correo. Por favor, inténtalo de nuevo más tarde.',
+                confirmButtonText: 'OK',
+                customClass: {
+                    confirmButton: 'swal2-button',
+                }
+            })
+        } finally {
             setLoading(false)
         }
     })
 
-    if(loading){
-        return (<Loader />)   
-    }
 
-    return (
-        <main className="boxReset">
-            <form onSubmit={onSubmit} className="formReset">
-                <h1 className='titleReset'>RECUPERA TU CONTRASEÑA</h1>
-                <h2 className='subtitleReset'>Ingresa tu correo y te enviaremos un link para restablecer tu contraseña</h2>
-                <div className='containerReset'>
-                    <label htmlFor="emailReset" className='resetLabel'> EMAIL:</label>
-                    <input type="email"            
-                    {...register("email", { required: true })}
-                    className="resetInput" 
-                    placeholder="tucorreo@empresa.cl" 
-                    />
-                </div>
-                <button type="submit" className="buttonLogin"> RECUPERAR CONTRASEÑA </button>
-            </form>
-        </main>
-    )
+if (loading) {
+    return (<Loader />)
 }
 
-export default ResetPassword
+return (
+    <main className="resetPasswordContainer">
+        <form onSubmit={onSubmit} className="resetPasswordForm">
+            <h1 className='resetPasswordTitle'> {user ? 'VERIFICAR USUARIO': 'REESTABLECER CONTRASEÑA'}</h1>
+            <h2 className='resetPasswordSubtitle'> {user ? 'Ingresa tu correo, y te enviaremos un link para cambiar tu contraseña y verificar tu usuario': 'Ingresa tu correo y te enviaremos un link para reestablecer tu contraseña'} </h2>
+            <div className='resetPasswordInput'>
+                <label htmlFor="emailReset" className='resetPasswordLabel'> EMAIL:</label>
+                <input type="email"
+                    {...register("email", { required: true })}
+                    className="resetPasswordInputBox"
+                    placeholder="tucorreo@empresa.cl"
+                    defaultValue={user ? user.email : ""}
+                />
+            </div>
+            <button type="submit" className="resetPasswordButton"> {user ? 'VERIFICAR ': 'RECUPERA TU CONTRASEÑA'}</button>
+        </form>
+    </main>
+)
+}
+
+export default ResetPassword;

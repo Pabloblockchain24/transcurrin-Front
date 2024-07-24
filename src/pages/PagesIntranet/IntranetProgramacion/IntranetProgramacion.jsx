@@ -1,51 +1,30 @@
-import React from 'react'
-import NavBarIntranet from "../../../components/NavbarIntranet/NavBarIntranet";
-import ProgramacionTable from "../../../components/programacionTable/programacionTable"
+/*import styles*/
 import "./IntranetProgramacion.css"
+
+/*import components*/
+import NavBarIntranet from "../../../components/Intranet/NavbarIntranet/NavBarIntranet";
+import Programacion from '../../../components/Intranet/Programacion/Programacion';
+
+/*import utils*/
+import { formatFecha, getHour } from "../../../utils/formatFechas"
 
 function IntranetProgramacion() {
 
-  const ahora = new Date()
-
-
-  const formatFechaMan = (fechaISO) => {
-    const fecha = new Date(fechaISO);
-    fecha.setDate(fecha.getDate() + 1);
-    const dia = fecha.getDate();
-    const mes = fecha.getMonth() + 1;
-    const año = fecha.getFullYear();
-    return `${dia}-${mes}-${año}`;
-  };
-
-  const formatFecha = (fechaISO) => {
-    const fecha = new Date(fechaISO);
-    const dia = fecha.getDate();
-    const mes = fecha.getMonth() + 1;
-    const año = fecha.getFullYear();
-    return `${dia}-${mes}-${año}`;
-  };
-
-
-  const getHora = (fechaISO) => {
-    const hora = fechaISO.getHours()
-    return hora
-  };
-
+  const diaAMostrar = new Date()
+  if (getHour() > 16) {
+    diaAMostrar.setDate(diaAMostrar.getDate() + 1)
+  }
 
   return (
     <>
-    
-    <NavBarIntranet/>
+      <NavBarIntranet />
+      <main className='intranetPageContainer'>
+        <div className='intranetPageTitle'> PROGRAMACIÓN {formatFecha(diaAMostrar)} </div>
+        <p className='intranetPageSubtitle'> A partir de las 16:00 se mostrará la programación del dia siguiente.</p>
 
-    <div className='boxPadre'>
-    <div className='titleIntranetProgramacion'> PROGRAMACION OPERACIONES {
-          getHora(ahora) > 16 ? formatFechaMan(ahora) : formatFecha(ahora)
-        }
-        </div>        
-    </div>
-
-    <ProgramacionTable/>
-</>
+      </main>
+      <Programacion />
+    </>
   )
 }
 

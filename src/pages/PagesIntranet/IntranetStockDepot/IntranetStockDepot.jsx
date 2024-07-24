@@ -1,9 +1,9 @@
 /*import styles*/
-import "./IntranetStatus.css";
+import "./IntranetStockDepot.css";
 
 /*import components*/
 import NavBarIntranet from "../../../components/Intranet/NavbarIntranet/NavBarIntranet";
-import Status from '../../../components/Intranet/Status/Status';
+import StockDepotTable from '../../../components/Intranet/StockDepotTable/StockDepotTable';
 
 /*import utils*/
 import { formatFecha } from "../../../utils/formatFechas"
@@ -14,9 +14,9 @@ function IntranetStockDepot() {
     <>
       <NavBarIntranet />
       <main className='intranetPageContainer'>
-        <div className='intranetPageTitle'> STATUS OPERACIONES {formatFecha(new Date())} </div>
+        <div className='intranetPageTitle'> UNIDADES EN DEPóSITO AL {formatFecha(new Date())} </div>
       </main>
-      <Status />
+      <StockDepotTable />
     </>
 
   )

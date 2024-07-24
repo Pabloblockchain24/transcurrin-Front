@@ -1,5 +1,6 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { registerRequest, loginRequest, verifyTokenRequest, sendMailRequest, sendMailReset, verificarCorreo } from "../api/auth"
+import { useNavigate } from 'react-router-dom'; // Importa useHistory
+import { loginRequest, verifyTokenRequest, sendMailRequest, sendMailReset } from "../api/auth"
 import Cookies from "js-cookie"
 
 const AuthContext = createContext()
@@ -14,13 +15,14 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    const [exists,setExists] = useState(false)
+    const [exists, setExists] = useState(false)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [errors, setErrors] = useState([])
     const [loading, setLoading] = useState(true)
+    const navigate = useNavigate();
 
-
-    const sendMail = async(data) => {
+    /*this mail is for contact homePage*/
+    const sendMail = async (data) => {
         try {
             const res = await sendMailRequest(data)
             return res
@@ -29,46 +31,34 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const sendMailRes = async(data) => {
+    /*this mail is for resetPassword*/
+    const sendMailResetPassword = async (data) => {
         try {
             const res = await sendMailReset(data)
+            return res
         } catch (error) {
-            console.log(error)
+            return error
         }
     }
 
-    const verificarCorreoEnBD = async(correo) => {
-        const res = await verificarCorreo(correo)
-        return res.data
-    }
-
-    const signup = async (user) => {
-        try {
-            const res = await registerRequest(user)
-            setUser(res.data)
-            setIsAuthenticated(true)
-        } catch (error) {
-            setErrors(error.response.data)
-        }
-    }
-
-    const signin = async (user) => {
+    /*this is for Login users*/
+    const login = async (user) => {
         try {
             const res = await loginRequest(user)
             setUser(res.data)
             setIsAuthenticated(true)
             return res;
         } catch (error) {
-           return error
-    }
+            return error
+        }
     }
 
-    const logout = async() =>{
+    /*this is for Logout users*/
+    const logout = async () => {
         Cookies.remove("token");
         setIsAuthenticated(false)
         setUser(null)
     }
-
 
     useEffect(() => {
         if (errors.length > 0) {
@@ -91,32 +81,31 @@ export const AuthProvider = ({ children }) => {
 
             try {
                 const res = await verifyTokenRequest(cookies.token)
-                if (!res.data){
-                setIsAuthenticated(false)
-                setLoading(false)
-                return
-                }  
+                if (!res.data) {
+                    setIsAuthenticated(false)
+                    setLoading(false)
+            
+                    return
+                }
                 setIsAuthenticated(true)
                 setUser(res.data)
                 setLoading(false)
+                navigate('/intranet');
 
             } catch (error) {
                 setIsAuthenticated(false)
                 setUser(null)
                 setLoading(false)
-
             }
         }
         checkLogin();
-    }, [])
+    }, [history])
 
     return (
         <AuthContext.Provider value={{
             sendMail,
-            sendMailRes,
-            verificarCorreoEnBD,
-            signup,
-            signin,
+            sendMailResetPassword,
+            login,
             logout,
             loading,
             user,

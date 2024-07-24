@@ -10,7 +10,7 @@ import { NavLink, Link, useLocation } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
 
 /*import icons and images*/
-import logoTrancurrin from "../../assets/logoTranscurrin.png"
+import logoTrancurrin from "../../assets/images/logos/logoTranscurrin.png"
 import { BsPersonGear } from "react-icons/bs";
 import { PiListFill } from "react-icons/pi";
 import { AiFillCloseSquare } from "react-icons/ai";

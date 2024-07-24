@@ -1,0 +1,34 @@
+/*this styles is for all intranet pages*/
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+    padding-block: 3rem;
+    padding-inline: 12rem;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .tableContainer{
+      padding-inline: 10rem;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .tableContainer{
+      padding-inline: 5rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+  
+    .tableContainer{
+      padding-inline: 2rem;
+    }
+  
+  }
+
+  @media screen and (max-width: 450px) {
+    .tableContainer{
+      padding-inline: 1rem;
+    }
+  }

@@ -1,0 +1,39 @@
+.tableBody td{
+  background-color: var(--backgroundTable);
+  padding-block: 0.75rem
+}
+
+.tableButton{
+  display: block;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  background-color: var(--quaternary);
+  margin-inline: 1rem;
+}
+  
+.tableButton:hover {
+  background-color: var(--secondary);
+  color: var(--quaternary);
+}
+
+.servicesNotFound{
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 16rem;
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+  .tableBody td{
+    font-size: small;
+  }
+  .tableButton{
+    margin-inline: 0.5rem;
+    padding: 0.25rem;
+  }
+}
+  

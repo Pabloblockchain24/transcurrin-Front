@@ -1,59 +1,41 @@
-import { useIntranet } from "../../context/IntranetContext";
-import { useEffect } from "react";
-import { useAuth } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
-import StockTable from "../../components/stockTable/stockTable";
-import NavBarIntranet from "../../components/NavbarIntranet/NavBarIntranet";
-import SummaryTable from "../../components/SummaryTable/SummaryTable";
+/*import styles*/
 import "./Intranet.css"
 
+/*import dependencies*/
+import { useEffect } from "react";
+
+/*import context*/
+import { useAuth } from "../../context/AuthContext"
+
+/*import components*/
+import NavBarIntranet from "../../components/Intranet/NavbarIntranet/NavBarIntranet";
+import SummaryTable from "../../components/Intranet/SummaryTable/SummaryTable";
+
+/*import utils*/
+import { formatFecha } from "../../utils/formatFechas"
+
 function Intranet() {
-    const { isAuthenticated, user, logout } = useAuth()
-    const { createService, getServices, updateService, services } = useIntranet()
+    const { user } = useAuth()
 
     useEffect(() => {
-        async function loadServices() {
-            await getServices()
+        if (user.verificado) {
+            window.location.href = 'http://localhost:5173/resetPassword';
         }
-        loadServices()
-    }, [])
-    if (services.length === 0) return (<h1> NO HAY SERVICIOS</h1>)
-
-    const formatFecha = (fechaISO) => {
-        const fecha = new Date(fechaISO);
-        const dia = fecha.getDate();
-        const mes = fecha.getMonth() + 1;
-        const año = fecha.getFullYear();
-        return `${dia}-${mes}-${año}`;
-    };
-
-
+    }, [user]);
 
     return (
         <>
+            <NavBarIntranet />
+            <main className="homeIntranetContainer">
+                <div className="homeIntranetText">
+                    <h1 className='homeIntranetTitle'> RESUMEN OPERACIONAL {formatFecha(new Date())} </h1>
+                    <p className="homeIntranetSubtitle"> Usuario: {user.name} </p>
+                    <p className="homeIntranetSubtitle"> Compañia: {user.company} </p>
+                </div>
 
-        <NavBarIntranet />
-
-            <div className="auxIntranetSummary">
-                <main className="boxMain">
-                    <div className='boxPadreIntranet'>
-                        <div className='titleIntranetSummary'> RESUMEN OPERACIONAL {formatFecha(new Date())} </div>
-                    </div>
-                    <div className="boxDataIntranet">
-                        <p className="dataIntranet"> Usuario: {user.name} </p>
-                        <p className="dataIntranet"> Compañia: {user.company} </p>
-                    </div>
-                    <SummaryTable />
-
-
-                </main>
-
-            </div>
-
-
+                <SummaryTable />
+            </main>
         </>
-
-
     )
 }
 

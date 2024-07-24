@@ -1,29 +1,20 @@
-import React from 'react'
-import NavBarIntranet from "../../../components/NavbarIntranet/NavBarIntranet";
-import FacturacionTable from '../../../components/FacturacionTable/FacturacionTable';
+/*import components*/
+import NavBarIntranet from "../../../components/Intranet/NavbarIntranet/NavBarIntranet";
+import FacturacionTable from '../../../components/Intranet/FacturacionTable/FacturacionTable';
+
+/*import utils*/
+import { formatFecha } from "../../../utils/formatFechas"
 
 function IntranetFacturacion() {
 
-  const today = new Date()
-
-  const formatFecha = (fechaISO) => {
-      const dia = fechaISO.getDate();
-      const mes = fechaISO.getMonth() + 1;
-      const año = fechaISO.getFullYear();
-      return `${dia}-${mes}-${año}`;
-    };
-
   return (
     <>
-    
-    <NavBarIntranet/>
-
-    <div className='boxPadre'>
-        <div className='titleIntranet'> FACTURACION PENDIENTE {formatFecha(today)} </div>
-        </div>
-
-    <FacturacionTable/>
-</>
+      <NavBarIntranet />
+      <main className='intranetPageContainer'>
+        <div className='intranetPageTitle'> SERVICIOS PENDIENTES DE FACTURACIÓN AL {formatFecha(new Date())} </div>
+      </main>
+      <FacturacionTable />
+    </>
   )
 }
 

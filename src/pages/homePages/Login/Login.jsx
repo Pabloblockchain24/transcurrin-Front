@@ -12,13 +12,13 @@ import { useAuth } from "../../../context/AuthContext"
 
 function LoginPage() {
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const { signin, isAuthenticated } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
 
   const onSubmit = handleSubmit(async data => {
     setLoading(true)
-    const res = await signin(data)
+    const res = await login(data)
     if (res.response.status == 400) {
       Swal.fire({
         title: 'Error',

@@ -1,73 +1,108 @@
-.titleIntranetSummary{
-    border-bottom: 5px solid rgb(253, 177, 0);
-    font-size: large;
-    font-weight: bold;
-    margin-top: 3%;
-    padding-bottom: 0.3%;
-    width: auto;
-
+.homeIntranetContainer{
+    display: flex;
+    flex-direction: column;
+    padding-block: 3rem;
+    padding-inline: 35rem;
 }
-
-
-.boxPadreIntranet{
+.homeIntranetText{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--background-card);
+    padding: 1rem;
+    padding-bottom: 1.5rem;
 }
 
-.boxMain{
-    width: 60%;
-    margin-bottom: 2%;
-    padding: 2%;
-   
+.homeIntranetTitle{
+    border-bottom: 3px solid var(--quaternary);
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
-.auxIntranetSummary{
+
+.homeIntranetSubtitle{
+    margin-top: 0.25rem;
+    font-weight: bold;
+}
+
+/*This is for all intranet pages*/
+.intranetPageContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1%;
-    margin-bottom: 10%;
-}
-
-.rowSummary{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 5%;
-    margin: 2%;
+}
+
+.intranetPageTitle{
     font-weight: bold;
-    font-size: large;
-    width: 100%;
+    padding-top: 2rem;
 }
 
+.intranetPageSubtitle{
+    padding-top: 1rem;
+    padding-inline: 3rem;
+    font-size: small;
+}   
 
-.sectionSummary{
-    display: flex;
-    flex-direction: column;
-    margin-top: 4%;
-    width: 100%;
-}
-
-.dataIntranet{
-    font-weight: bold;
-    margin-block: 0.5%;
-    padding-bottom: 0.3%;
-
-    width: auto;
-
-}
-
-.boxDataIntranet{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;    
-    margin-top: 1.5%;
-}
-
-@media screen and (max-width: 920px) {
-    
-    .auxIntranetSummary{
-        margin-top: 5%;
+@media screen and (max-width: 1650px) {
+    .homeIntranetContainer{
+        padding-inline: 30rem;
     }
 }
+
+@media screen and (max-width: 1450px) {
+    .homeIntranetContainer{
+        padding-inline: 25rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .homeIntranetContainer{
+        padding-inline: 15rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .homeIntranetContainer{
+        padding-inline: 10rem;
+    }
+    
+    .intranetPageSubtitle{
+    padding-inline: 5rem;
+    }   
+
+}
+
+@media screen and (max-width: 768px) {
+    .homeIntranetContainer{
+        padding-inline: 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .homeIntranetContainer{
+        padding-inline: 2rem;
+    }
+    .intranetPageTitle{
+        margin-top: 10%;
+        margin-inline: 5%;
+        font-size: small;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .homeIntranetTitle{
+        font-size: medium;
+    }
+    .homeIntranetText{
+    font-size: small;
+    }
+    .homeIntranetContainer{
+        padding-inline: 2rem;
+        padding-block: 1rem;
+    }
+}
+
+
 
