@@ -16,12 +16,12 @@ import Footer from "./components/Footer/Footer";
 /* import home pages */
 import Home from "./pages/Home/Home";
 import Nosotros from "./pages/Nosotros/Nosotros"
-import Deposito from "./pages/HomePages/Deposito/Deposito";
-import Servicios from "./pages/HomePages/Servicios/Servicios"
-import Clientes from "./pages/HomePages/Clientes/Clientes"
-import Contacto from "./pages/HomePages/Contacto/Contacto"
-import Login from "./pages/HomePages/Login/Login"
-import ResetPassword from "./pages/HomePages/ResetPassword/ResetPassword";
+import Deposito from "./pages/Deposito/Deposito";
+import Servicios from "./pages/Servicios/Servicios"
+import Clientes from "./pages/Clientes/Clientes"
+import Contacto from "./pages/Contacto/Contacto"
+import Login from "./pages/Login/Login"
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 
 /* import intranet pages */
 import Intranet from "./pages/Intranet/Intranet";
