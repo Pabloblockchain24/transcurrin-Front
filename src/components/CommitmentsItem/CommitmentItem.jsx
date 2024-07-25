@@ -1,6 +1,5 @@
 /*import styles*/
 import "./CommitmentItem.css";
-
 function CommitmentItem({title, description, img }) {
 
     return (
