@@ -1,7 +1,7 @@
 @import url('../../assets/colors/variables.css');
 
 .contactoContainer{
-    background-image: url("../../assets/images/banners/banner2.jpg");
+    background-image: url("../../../imgs/banner2.jpg");
     background-color: rgb(59, 57, 53);
     background-blend-mode: multiply;
     background-size: cover;
