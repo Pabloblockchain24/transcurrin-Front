@@ -1,5 +1,5 @@
 .loginContainer{
-    background-image: url("../../../assets/images/backgrounds/login.jpg");
+    background-image: url("../../assets/images/backgrounds/login.jpg");
     background-color: var(--quaternary);
     background-blend-mode: multiply;
     background-size: cover;
