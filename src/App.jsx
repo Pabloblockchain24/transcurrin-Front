@@ -15,7 +15,7 @@ import Footer from "./components/Footer/Footer";
 
 /* import home pages */
 import Home from "./pages/Home/Home";
-import Nosotros from "./pages/HomePages/Nosotros/Nosotros"
+import Nosotros from "./pages/Nosotros/Nosotros"
 import Deposito from "./pages/HomePages/Deposito/Deposito";
 import Servicios from "./pages/HomePages/Servicios/Servicios"
 import Clientes from "./pages/HomePages/Clientes/Clientes"

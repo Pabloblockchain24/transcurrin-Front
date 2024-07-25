@@ -2,7 +2,7 @@
 import "./Nosotros.css";
 
 /*import components*/
-import NosotrosItem from "../../../components/NosotrosItem/NosotrosItem";
+import NosotrosItem from "../../components/NosotrosItem/NosotrosItem";
 function Nosotros() {
   return (
     <main className="nosotrosContainer">
