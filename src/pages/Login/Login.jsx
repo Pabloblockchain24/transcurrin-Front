@@ -8,8 +8,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Swal from 'sweetalert2';
 
 /*import context*/
-import { useAuth } from "../../../context/AuthContext"
-
+import { useAuth } from "../../context/AuthContext";
 function LoginPage() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const { login, isAuthenticated } = useAuth();

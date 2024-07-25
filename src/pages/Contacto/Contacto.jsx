@@ -2,7 +2,7 @@
 import "./Contacto.css";
 
 /*import components*/
-import ContactoCard from "../../../components/ContactoCard/ContactoCard";
+import ContactoCard from "../../components/ContactoCard/ContactoCard";
 
 function Contacto() {
   return (

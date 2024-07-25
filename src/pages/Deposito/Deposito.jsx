@@ -2,7 +2,7 @@
 import "./Deposito.css";
 
 /*import components*/
-import DepositoItem from "../../../components/DepositoItem/DepositoItem"
+import DepositoItem from "../../components/DepositoItem/DepositoItem"
 
 function Deposito() {
     return (

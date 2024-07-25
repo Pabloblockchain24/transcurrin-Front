@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 /*import context*/
-import { useAuth } from "../../../context/AuthContext"
+import { useAuth } from "../../context/AuthContext"
 
 /*import components*/
-import Loader from '../../../components/Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 
 function ResetPassword() {
     const { handleSubmit, register } = useForm()

@@ -2,7 +2,7 @@
 import "./Clientes.css";
 
 /*import components*/
-import ClienteItem from "../../../components/ClienteItem/ClienteItem"
+import ClienteItem from "../../components/ClienteItem/ClienteItem"
 
 
 function Clientes() {

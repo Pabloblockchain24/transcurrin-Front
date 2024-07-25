@@ -2,7 +2,7 @@
 import "./Servicios.css"
 
 /*import components*/
-import ServiciosItem from "../../../components/ServiciosItem/ServiciosItem"
+import ServiciosItem from "../../components/ServiciosItem/ServiciosItem"
 
 function Servicios() {
     return (
