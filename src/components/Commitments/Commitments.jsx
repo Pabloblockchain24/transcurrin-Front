@@ -1,6 +1,5 @@
 /*Import componenets*/
 import CommitmentItem from "../CommitmentsItem/CommitmentItem"
-import transparencia from "../../assets/images/commitments/transparencia.jpg"
 function Commitments() {
     return (
         <>
