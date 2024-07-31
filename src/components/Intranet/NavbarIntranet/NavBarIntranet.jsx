@@ -32,20 +32,20 @@ function NavBarIntranet() {
 
     <header className='navIntranetContainer'>
       <div className="navIntranetButtonContainer">
-        <button className='navIntranetButton' onClick={toggleMenu}><PiListFill className='navIntranetButtonIcon' /></button>
+        <button className='navIntranetButton' onClick={toggleMenu}><PiListFill /></button>
       </div>
       
-      <nav className={menuOpen ? 'nav-Intranet visible' : 'nav-Intranet' }>
-        <button className="cerrarMenu" onClick={toggleMenu}><AiFillCloseSquare /></button>
-        <ul className='nav-list-Intranet'>
-          <li className='liNavList'> <NavLink to={"/intranet"} className="itemlistNav">  <FaHome className='nav-item-icon' /> HOME </NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/transitoMaritimo"} className="itemlistNav"> <RiShipLine className='nav-item-icon' />TRANSITO</NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/stockPuerto"} className="itemlistNav"> <BiAnchor className='nav-item-icon' />PUERTO</NavLink></li>
-          <li className='liNavList'> <NavLink to={"/intranet/stock"} className="itemlistNav"> <TfiClipboard className='nav-item-icon' />DEPOSITO</NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/programacion"} className="itemlistNav"> <VscCalendar className='nav-item-icon' />PROGRAMACION</NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/status"} className="itemlistNav"> <TfiAlarmClock className='nav-item-icon' />STATUS</NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/vacios"} className="itemlistNav"> <GiReturnArrow className='nav-item-icon' /> DEV. VACIOS</NavLink> </li>
-          <li className='liNavList'> <NavLink to={"/intranet/facturacion"} className="itemlistNav"> <GrCalculator className='nav-item-icon' />FACTURACION</NavLink> </li>
+      <nav className={menuOpen ? 'navIntranet visible' : 'navIntranet' }>
+        <button className="cerrarNavIntranet" onClick={toggleMenu}><AiFillCloseSquare /></button>
+        <ul className='navIntranetList'>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet"} className="navIntranetListLink">  <FaHome className='navIntranetListIcon' /> HOME </NavLink> </li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/transitoMaritimo"} className="navIntranetListLink"> <RiShipLine className='navIntranetListIcon' />TRANSITO</NavLink> </li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/stockPuerto"} className="navIntranetListLink"> <BiAnchor className='navIntranetListIcon' />PUERTO</NavLink></li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/stock"} className="navIntranetListLink"> <TfiClipboard className='navIntranetListIcon' />DEPOSITO</NavLink> </li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/programacion"} className="navIntranetListLink"> <VscCalendar className='navIntranetListIcon' />PROGRAMACION</NavLink> </li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/status"} className="navIntranetListLink"> <TfiAlarmClock className='navIntranetListIcon' />STATUS</NavLink> </li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/vacios"} className="navIntranetListLink"> <GiReturnArrow className='navIntranetListIcon' /> DEV. VACIOS</NavLink> </li>
+          <li className='navIntranetListItem'> <NavLink to={"/intranet/facturacion"} className="navIntranetListLink"> <GrCalculator className='navIntranetListIcon' />FACTURACION</NavLink> </li>
         </ul>
       </nav>
     </header>
