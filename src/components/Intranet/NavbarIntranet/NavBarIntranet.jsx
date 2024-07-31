@@ -1,11 +1,12 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useAuth } from "../../../context/AuthContext"
-import { NavLink, Link, useLocation } from "react-router-dom"
+/*import styles*/
 import "./NavbarIntranet.css"
 
-import { TfiClipboard } from "react-icons/tfi";
-import { TfiAlarmClock } from "react-icons/tfi";
+/*import dependencies */
+import React, { useState, useEffect } from 'react'
+import { NavLink, useLocation } from "react-router-dom"
+
+/*import icons*/
+import { TfiClipboard, TfiAlarmClock } from "react-icons/tfi";
 import { VscCalendar } from "react-icons/vsc";
 import { GrCalculator } from "react-icons/gr";
 import { FaHome } from "react-icons/fa";
@@ -16,7 +17,6 @@ import { PiListFill } from "react-icons/pi";
 import { AiFillCloseSquare } from "react-icons/ai";
 
 function NavBarIntranet() {
-  const {logout } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -30,9 +30,9 @@ function NavBarIntranet() {
 
   return (
 
-    <header className='headerNavIntranet'>
-      <div className="abrirMenu">
-        <button className='customButtonNavbarIntranet' onClick={toggleMenu}><PiListFill className='buttonAbrir' /></button>
+    <header className='navIntranetContainer'>
+      <div className="navIntranetButtonContainer">
+        <button className='navIntranetButton' onClick={toggleMenu}><PiListFill className='navIntranetButtonIcon' /></button>
       </div>
       
       <nav className={menuOpen ? 'nav-Intranet visible' : 'nav-Intranet' }>
@@ -48,10 +48,7 @@ function NavBarIntranet() {
           <li className='liNavList'> <NavLink to={"/intranet/facturacion"} className="itemlistNav"> <GrCalculator className='nav-item-icon' />FACTURACION</NavLink> </li>
         </ul>
       </nav>
-
-   
     </header>
-
   )
 }
 

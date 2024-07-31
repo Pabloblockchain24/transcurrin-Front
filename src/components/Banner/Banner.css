@@ -1,5 +1,3 @@
-@import url('../../assets/colors/variables.css');
-
 .slick-prev:before{
     color: var(--primary);
     font-size: 1rem; 

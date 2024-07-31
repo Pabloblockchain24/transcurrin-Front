@@ -16,7 +16,6 @@ import { FaFilter } from "react-icons/fa";
 
 export const IntranetTable = ({ servicios, columns }) => {
 
-
     const columnsAux = columns.map((servicio) => servicio.id);
 
     function createData(...args) {
@@ -80,9 +79,7 @@ export const IntranetTable = ({ servicios, columns }) => {
                     }
                     return "PENDIENTE"
                 }
-                return "ENTREGADO"
-                
-              
+                return "ENTREGADO" 
             }
             return service[column.toLowerCase()];
         });

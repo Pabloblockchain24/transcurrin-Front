@@ -1,8 +1,27 @@
-.headerNavIntranet{
+.navIntranetContainer{
     display: flex;
     flex-direction: row;
     margin-bottom: 5rem;
 }
+
+.navIntranetButtonContainer {
+    display: none;
+    background-color: var(--secondary);
+    width: 100%;
+}
+
+.navIntranetButton{
+    margin-top: 2.5%;
+    margin-bottom: 2.5% ;
+    margin-left: 5%;
+}
+
+.navIntranetButtonIcon{
+    padding: 2%;
+}
+
+
+navIntranetButtonContainer
 
 .nav-Intranet{
     display: flex;
@@ -24,9 +43,7 @@
 }
 
 
-.buttonAbrir{
-    padding: 2%;
-}
+
 
 /*ESTOS SON LOS EQUIVALENTES A "nav-list li a"*/
 .itemlistNav{
@@ -58,17 +75,8 @@
     margin-left: 10%;
 }
 
-.abrirMenu {
-    display: none;
-    background-color: rgb(253, 177, 0);
-    width: 100%;
-}
 
-.customButtonNavbarIntranet{
-    margin-top: 2.5%;
-    margin-bottom: 2.5% ;
-    margin-left: 5%;
-}
+
 
 
 .cerrarMenu{
@@ -107,7 +115,7 @@
 
     }
 
-    .headerNavIntranet{
+    .navIntranetContainer{
         margin-bottom: 5%;
     }
     
@@ -115,7 +123,7 @@
 
 @media screen and (max-width: 920px) {
 
-    .abrirMenu,.cerrarMenu,.buttonLogout {
+    .navIntranetButtonContainer,.cerrarMenu,.buttonLogout {
         display: block;
     }
     .nav-Intranet{
@@ -178,88 +186,3 @@
         font-size: medium;
     }
 }
-
-/*     
-    .navbarIntranetCustom {
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: fixed;
-        z-index: 1000;
-        gap: 2rem;
-        background-color: rgb(46, 46, 46);
-        padding: 3rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.4);
-        margin-left: 0%;
-        width: 50%;
-      }
-
-    .navbarIntranetCustom.visible {
-        opacity: 1;
-        visibility: visible;
-      }
-
-
-
-    .nav-list-Intranet{
-        flex-direction: column;
-        justify-content: center;
-        align-items: end;
-        gap: 0.5rem;
-        font-size: large;
-    }
-
-    .menuMobile{
-        display: block;
-        border: 0;
-        font-size: 2rem;
-        background-color: transparent;
-        cursor: pointer;
-        margin-right: 5%;
-        color: black;
-      } */
-/* }
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.nav-item-Intranet{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-
-
-    border-right: 1px solid rgb(218, 218, 218);
-    padding: 0.5%;
-    font-weight: bold;
-    width: 20%;
-}
-
-.nav-item-icon{
-margin-right: 5%;
-}
-
-.nav-item-Intranet:hover{
-    background-color: rgb(241, 214, 164);
-} */

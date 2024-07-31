@@ -11,7 +11,7 @@ function ServiciosItem({ title, img, description }) {
             <div className="serviciosArticleText">
                 <h2 className='serviciosArticleTitle'>{title}</h2>
                 <p className='serviciosArticleDescription'> {description}</p>
-                <NavLink to={"/categoria/Contacto"} className="serviciosArticleButton"> COTIZAR </NavLink>
+                <NavLink to={"/Contacto"} className="serviciosArticleButton"> COTIZAR </NavLink>
             </div>
 
         </article>
