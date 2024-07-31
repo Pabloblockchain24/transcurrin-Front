@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react"
-import { createServiceRequest, getServicesRequest, deleteServiceRequest, getServiceRequest, updateServiceRequest } from "../api/services"
+// import { createServiceRequest, getServicesRequest, deleteServiceRequest, getServiceRequest, updateServiceRequest } from "../api/services"
+import {  getServicesRequest } from "../api/services"
 const IntranetContext = createContext()
 
 export const useIntranet = () => {
@@ -22,45 +23,45 @@ export function IntranetProvider({ children }) {
         }
     }
 
-    const createService = async (service) => {
-        const res = await createServiceRequest(service)
-        console.log(res)
-    }
+    // const createService = async (service) => {
+    //     const res = await createServiceRequest(service)
+    //     console.log(res)
+    // }
 
-    const deleteService = async (id) => {
-        try {
-            const res = await deleteServiceRequest(id)
-            if (res.status === 204) setServices(services.filter(service => service._id !== id))
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // const deleteService = async (id) => {
+    //     try {
+    //         const res = await deleteServiceRequest(id)
+    //         if (res.status === 204) setServices(services.filter(service => service._id !== id))
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
-    const getService = async (id) => {
-        try {
-            const res = await getServiceRequest(id)
-            return res.data
-        } catch (error){
-            console.log(error)
-        }
-    }
+    // const getService = async (id) => {
+    //     try {
+    //         const res = await getServiceRequest(id)
+    //         return res.data
+    //     } catch (error){
+    //         console.log(error)
+    //     }
+    // }
 
-    const updateService = async(id,service) =>{
-        try{
-            const res = await updateServiceRequest(id,service)
-        }catch(error){
-            console.log(error)
-        }
-    }
+    // const updateService = async(id,service) =>{
+    //     try{
+    //         const res = await updateServiceRequest(id,service)
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+    // }
 
     return (
         <IntranetContext.Provider value={{
             services,
-            createService,
+            // createService,
             getServices,
-            deleteService,
-            getService,
-            updateService
+            // deleteService,
+            // getService,
+            // updateService
         }}
         >
             {children}
