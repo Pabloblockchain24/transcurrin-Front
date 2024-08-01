@@ -40,7 +40,7 @@ function ResetPassword() {
                     icon: 'success',
                     confirmButtonText: 'OK',
                 }).then(() => {
-                    navigate('/intranet')
+                    navigate('/')
                 })
             } else {
                 Swal.fire({
@@ -63,7 +63,6 @@ function ResetPassword() {
             })
         } finally {
             setLoading(false)
-            navigate('/')
         }
     })
 
@@ -72,7 +71,6 @@ if (loading) {
     return (<Loader />)
 }
 
-console.log(user)
 
 return (
     <main className="resetPasswordContainer">

@@ -34,6 +34,10 @@ export const AuthProvider = ({ children }) => {
     const sendMailResetPassword = async (data) => {
         try {
             const res = await sendMailReset(data)
+            if (res.status === 200) {
+                setUser(null);
+                setIsAuthenticated(false);
+            }
             return res
         } catch (error) {
             return error
