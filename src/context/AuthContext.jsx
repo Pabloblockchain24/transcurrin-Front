@@ -15,7 +15,6 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-    const [exists, setExists] = useState(false)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [errors, setErrors] = useState([])
     const [loading, setLoading] = useState(true)
@@ -46,7 +45,10 @@ export const AuthProvider = ({ children }) => {
         try {
             const res = await loginRequest(user)
             setUser(res.data)
-            setIsAuthenticated(true)
+            setIsAuthenticated(true);
+            if (!res.data.verificado){
+                navigate('/resetPassword');
+            }
             return res;
         } catch (error) {
             return error
@@ -82,14 +84,13 @@ export const AuthProvider = ({ children }) => {
             try {
                 const res = await verifyTokenRequest(cookies.token)
                 if (!res.data) {
-                    setIsAuthenticated(false)
-                    setLoading(false)
-            
-                    return
+                    setIsAuthenticated(false);
+                    setLoading(false);
+                    return;
                 }
-                setIsAuthenticated(true)
-                setUser(res.data)
-                setLoading(false)
+                setUser(res.data);
+                setIsAuthenticated(true);
+                setLoading(false);
                 navigate('/intranet');
 
             } catch (error) {

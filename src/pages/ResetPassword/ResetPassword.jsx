@@ -71,11 +71,13 @@ if (loading) {
     return (<Loader />)
 }
 
+console.log(user)
+
 return (
     <main className="resetPasswordContainer">
         <form onSubmit={onSubmit} className="resetPasswordForm">
-            <h1 className='resetPasswordTitle'> {user ? 'VERIFICAR USUARIO': 'REESTABLECER CONTRASEÑA'}</h1>
-            <h2 className='resetPasswordSubtitle'> {user ? 'Ingresa tu correo, y te enviaremos un link para cambiar tu contraseña y verificar tu usuario': 'Ingresa tu correo y te enviaremos un link para reestablecer tu contraseña'} </h2>
+            <h1 className='resetPasswordTitle'> { user ? 'VERIFICAR USUARIO': 'REESTABLECER CONTRASEÑA'}</h1>
+            <h2 className='resetPasswordSubtitle'> { user ? 'Ingresa tu correo, y te enviaremos un link para cambiar tu contraseña y verificar tu usuario': 'Ingresa tu correo y te enviaremos un link para reestablecer tu contraseña'} </h2>
             <div className='resetPasswordInput'>
                 <label htmlFor="emailReset" className='resetPasswordLabel'> EMAIL:</label>
                 <input type="email"

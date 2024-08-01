@@ -19,6 +19,7 @@ function LoginPage() {
     setLoading(true)
     const res = await login(data)
     if (res.response.status == 400) {
+
       Swal.fire({
         title: 'Error',
         text: res.response.data.message,
@@ -30,7 +31,7 @@ function LoginPage() {
     }
     setLoading(false)
   }
-)
+  )
 
   useEffect(() => {
     if (isAuthenticated) {

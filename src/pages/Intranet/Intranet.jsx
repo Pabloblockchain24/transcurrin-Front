@@ -18,8 +18,8 @@ function Intranet() {
     const { user } = useAuth()
 
     useEffect(() => {
-        if (user.verificado) {
-            window.location.href = 'http://localhost:5173/resetPassword';
+        if (user && !user.verificado) {
+            window.location.href = '/resetPassword';
         }
     }, [user]);
 

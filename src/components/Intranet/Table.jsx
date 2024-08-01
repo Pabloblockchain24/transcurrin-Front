@@ -10,6 +10,7 @@ import React, { useState, useRef } from "react";
 /*import utils*/
 import { formatFecha } from "../../utils/formatFechas";
 import { demurrage, diasEnPuerto, diasEnDepot, formatHoraEntrega, horaEntregaEstimada } from "../../utils/calculationsTransito";
+import { formatTarifa } from "../../utils/formatTarifa"
 
 /*import icons*/
 import { FaFilter } from "react-icons/fa";
@@ -70,6 +71,9 @@ export const IntranetTable = ({ servicios, columns }) => {
             }
             if (column === 'estimadaEntrega') {
                 return horaEntregaEstimada(service.carguioEntrega)
+            }
+            if (column === 'Tarifa') {
+                return formatTarifa(service.tarifa);
             }
             if (column === 'statusEntrega') {
 
