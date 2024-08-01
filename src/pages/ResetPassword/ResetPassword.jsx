@@ -63,6 +63,7 @@ function ResetPassword() {
             })
         } finally {
             setLoading(false)
+            navigate('/')
         }
     })
 
