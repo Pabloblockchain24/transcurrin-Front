@@ -16,7 +16,7 @@ function Deposito() {
                 <DepositoItem title="TRACTOCAMIONES" img="../../../imgs/deposito/tractocamiones.jpg" description="Operamos una flota de tractocamiones en perfectas condiciones, con más de 20 unidades, garantizando eficiencia y confiabilidad en el cumplimiento de nuestros compromisos en tiempo y forma<" />
                 <DepositoItem title="RAMPLAS PLANAS" img="../../../imgs/deposito/rampaPlana.jpg" description="Ramplas planas que permiten tanto el traslado de carga suelta (palletizada) como de contenedores" />
                 <DepositoItem title="CHASIS" img="../../../imgs/deposito/chasis.jpg" description="Chasis que permiten un uso mas del tonelaje transportado en cada servicio, asi como la posibilidad de trasladar cargas reefer." />
-                <DepositoItem title="CARPAS / ESLINGAS / GPS" img="../../../imgs/images/deposito/carpas.jpg" description="Cada tractocamion cuenta con carpas y eslingas para asegurar la carga en caso que sea necesario, además de GPS." />
+                <DepositoItem title="CARPAS / ESLINGAS / GPS" img="../../../imgs/deposito/carpas.jpg" description="Cada tractocamion cuenta con carpas y eslingas para asegurar la carga en caso que sea necesario, además de GPS." />
             </section>
         </main>
     )
