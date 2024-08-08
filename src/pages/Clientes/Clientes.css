@@ -42,3 +42,11 @@
         padding-inline: 1rem;
     } 
 }
+
+
+@media screen and (max-width: 450px) {
+
+    .clientesSubTitle{
+        padding-inline: 0.25rem;
+    } 
+}

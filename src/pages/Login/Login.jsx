@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 /*import context*/
 import { useAuth } from "../../context/AuthContext";
@@ -40,6 +41,14 @@ function LoginPage() {
   }, [isAuthenticated])
 
   return (
+
+    <>
+          <Helmet>
+        <title> Transcurrin || Login </title>
+        <meta name="description" content="Acceso clientes" />
+        <meta property="og:title" content=" Transcurrin || Login" />
+        <meta property="og:description" content="Acceso clientes." />
+      </Helmet>
     <main className="loginContainer">
       <section className="loginCard">
         <h1 className="loginCardTitle"> ACCESO CLIENTES </h1>
@@ -76,6 +85,8 @@ function LoginPage() {
 
       </section>
     </main>
+    </>
+    
   )
 }
 
