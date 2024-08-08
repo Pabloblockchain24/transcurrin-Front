@@ -3,6 +3,11 @@ import "./Nosotros.css";
 
 /*import components*/
 import NosotrosItem from "../../components/NosotrosItem/NosotrosItem";
+
+/*import dependencies*/
+import { Helmet } from 'react-helmet-async';
+
+
 function Nosotros() {
   return (
     <>
