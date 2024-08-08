@@ -65,9 +65,6 @@
     .BannerText{
         gap: 0.5rem;
     }
-    .BannerContainer{
-        height: 50vh;
-    }
     .BannerTitle{
         font-size: large
     }
@@ -80,9 +77,6 @@
 }
 
 @media screen and (max-width: 450px) {
-    .BannerContainer{
-        height: 40vh;
-    }
     .BannerTitle{
         font-size: medium
     }

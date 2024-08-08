@@ -41,7 +41,7 @@ function Footer() {
         </article>
 
         <article className="footerDerButton">
-          <NavLink to={"/Contacto"} className="footerDerButtonLink"> OBTEN TU COTIZACIÓN HOY </NavLink>
+          <NavLink to={"/contacto"} className="footerDerButtonLink"> OBTEN TU COTIZACIÓN HOY </NavLink>
         </article>
         <p className="footerDerButtonText"> ¡ Solo válido para días hábiles !</p>
       </section>

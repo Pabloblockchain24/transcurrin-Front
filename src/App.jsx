@@ -1,5 +1,6 @@
 /* import dependencies*/
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 /* import context*/
 import { AuthProvider } from "./context/AuthContext";
@@ -36,40 +37,41 @@ import IntranetTransitoMaritimo from "./pages/PagesIntranet/IntranetTransitoMari
 function App() {
 
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <IntranetProvider>
-          <ScrollToTop />
-          <Navbar />
-          <hr />
-          <Routes>
+    <HelmetProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <IntranetProvider>
+            <ScrollToTop />
+            <Navbar />
+            <hr />
+            <Routes>
 
-            <Route path="/" element={<Home />} />
-            <Route path="/Nosotros" element={<Nosotros />} />
-            <Route path="/Deposito" element={<Deposito />} />
-            <Route path="/Servicios" element={<Servicios />} />
-            <Route path="/Clientes" element={<Clientes />} />
-            <Route path="/Contacto" element={<Contacto />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/ResetPassword" element={<ResetPassword />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/deposito" element={<Deposito />} />
+              <Route path="/servicios" element={<Servicios />} />
+              <Route path="/clientes" element={<Clientes />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/resetPassword" element={<ResetPassword />} />
 
-            <Route element={<ProtectedRoute />}>
-              <Route path="/intranet" element={<Intranet />} />
-              <Route path="/intranet/stock" element={<IntranetStockDepot />} />
-              <Route path="/intranet/stockPuerto" element={<IntranetStockPuerto />} />
-              <Route path="/intranet/programacion" element={<IntranetProgramacion />} />
-              <Route path="/intranet/status" element={<IntranetStatus />} />
-              <Route path="/intranet/vacios" element={<IntranetVacios />} />
-              <Route path="/intranet/facturacion" element={<IntranetFacturacion />} />
-              <Route path="/intranet/transitoMaritimo" element={<IntranetTransitoMaritimo />} />
-            </Route>
+              <Route element={<ProtectedRoute />}>
+                <Route path="/intranet" element={<Intranet />} />
+                <Route path="/intranet/stock" element={<IntranetStockDepot />} />
+                <Route path="/intranet/stockPuerto" element={<IntranetStockPuerto />} />
+                <Route path="/intranet/programacion" element={<IntranetProgramacion />} />
+                <Route path="/intranet/status" element={<IntranetStatus />} />
+                <Route path="/intranet/vacios" element={<IntranetVacios />} />
+                <Route path="/intranet/facturacion" element={<IntranetFacturacion />} />
+                <Route path="/intranet/transitoMaritimo" element={<IntranetTransitoMaritimo />} />
+              </Route>
 
-          </Routes>
-          <Footer />
-        </IntranetProvider>
-      </AuthProvider>
-    </BrowserRouter>
-
+            </Routes>
+            <Footer />
+          </IntranetProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

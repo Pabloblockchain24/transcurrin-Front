@@ -42,12 +42,12 @@ function Navbar() {
             <nav className={menuOpen ? 'navbarLinks visible' : 'navbarLinks'}>
               <ul className="navbarList">
                 <button className="cerrarMenuMobile" onClick={toggleMenu}><AiFillCloseSquare /></button>
-                <li><NavLink to="/Nosotros" className="navbarListItem"> NOSOTROS </NavLink> </li>
-                <li><NavLink to="/Deposito" className="navbarListItem"> EQUIPOS</NavLink></li>
-                <li><NavLink to="/Servicios" className="navbarListItem">SERVICIOS</NavLink></li>
-                <li><NavLink to="/Clientes" className="navbarListItem">CLIENTES</NavLink></li>
-                <li><NavLink to="/Contacto" className="navbarListItem">CONTACTO</NavLink></li>
-                <NavLink to="/Login" className="navbarListIntranet"><BsPersonGear /> INTRANET</NavLink>
+                <li><NavLink to="/nosotros" className="navbarListItem"> NOSOTROS </NavLink> </li>
+                <li><NavLink to="/deposito" className="navbarListItem"> EQUIPOS</NavLink></li>
+                <li><NavLink to="/servicios" className="navbarListItem">SERVICIOS</NavLink></li>
+                <li><NavLink to="/clientes" className="navbarListItem">CLIENTES</NavLink></li>
+                <li><NavLink to="/contacto" className="navbarListItem">CONTACTO</NavLink></li>
+                <NavLink to="/login" className="navbarListIntranet"><BsPersonGear /> INTRANET</NavLink>
               </ul>
             </nav>
           </>

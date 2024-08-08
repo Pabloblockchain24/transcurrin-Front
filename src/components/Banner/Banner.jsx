@@ -26,9 +26,9 @@ function Banner() {
         <>
             <section >
                 <Slider {...settings}>
-                    <BannerItem title="SOLUCIONES LOGISTICAS A TU MEDIDA" subtitle="Nos adaptamos a tus necesidades" img="../../../imgs/banner1.jpg" />
-                    <BannerItem title="EXPERIENCIA A TU SERVICIO" subtitle="35 años de operación nos respaldan" img="../../../imgs/banner2.jpg" />
-                    <BannerItem title="CENTRATE EN TU NEGOCIO PRINCIPAL" subtitle="Despreocupate de la logistica de tu carga" img="../../../imgs/banner3.jpg" />
+                    <BannerItem title="EXPERIENCIA A TU SERVICIO" subtitle="35 años de operación nos respaldan" img="../../../imgs/banner1.jpg" />
+                    <BannerItem title="SOLUCIONES LOGÍSTICAS A TU MEDIDA" subtitle="Nos adaptamos a tus necesidades" img="../../../imgs/banner2.jpg" />
+                    <BannerItem title="CENTRATE EN TU NEGOCIO PRINCIPAL" subtitle="Despreocupate de la logística de tu carga" img="../../../imgs/banner3.jpg" />
                 </Slider>
             </section>
             <hr />
